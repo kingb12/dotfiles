@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kfan/.oh-my-zsh
+export ZSH=/Users/bking/.oh-my-zsh
 
 POWERLEVEL9K_MODE='awesome-patched'
 TERM=xterm-256color
@@ -55,7 +55,6 @@ plugins=(git battery brew zsh-syntax-highlighting)
 
 # User configuration
 
-export PATH="/Users/kfan/bin:/Users/kfan/scripts:/Users/kfan/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/kfan/.gem/ruby/2.0.0/bin:/Users/kfan/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -112,19 +111,9 @@ function extract()
   fi
 }
 
-# The Fuck
-eval "$(thefuck --alias fuck)"
-
-alias cleardb='echo '"'"'drop schema if exists frontdoor; create schema frontdoor;'"'"' | mysqldb'
 alias ls='ls -G'
 alias ll='ls -laG'
 alias la='ls -aG'
-alias frontdoor='cd ~/git/frontdoor'
-alias fd='cd ~/git/frontdoor'
-alias javaclient='cd ~/git/frontdoorjavaclient'
-alias fdclient='cd ~/git/frontdoorjavaclient'
-alias fdtools='cd ~/git/frontdoor-tools'
-alias fdt='cd ~/git/frontdoor-tools'
 alias ..='cd ..'
 alias .='pwd;ls -G'
 alias ~='cd ~'
@@ -136,25 +125,13 @@ alias gpush='git push'
 alias gs='git status'
 alias ggraph='git log --decorate --graph --all --pretty=format:"%C(yellow)%h %C(green)%ad %C(dim white)[%cn] %Creset%Cblue%s%Creset%b%Cred%d" --date=short'
 alias glog='git log'
+alias pips= 'sudo pip'
 
-alias mysqldb='/Applications/MySQLWorkbench.app/Contents/MacOS/mysql -h localhost -u root'
-alias mysqlstart='sudo /usr/local/mysql/support-files/mysql.server start'
-alias mysqlstop='sudo /usr/local/mysql/support-files/mysql.server stop'
-
-DEFAULT_USER="kfan"
-
-prompt_zsh_spotify () {
-  state=`osascript -e 'tell application "Spotify" to player state as string'`;
-  if [ $state = "playing" ]; then
-    artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
-    track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
-
-    echo -n "$artist - $track";
-  fi
-}
+# aliases for connecting to other hosts
+alias attu='ssh kingb12@attu.cs.washington.edu'
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('dir' 'vcs')
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('time' 'zsh_spotify')
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('time') 
 POWERLEVEL9K_RVM_BACKGROUND="red"
 POWERLEVEL9K_RVM_FOREGROUND="black"
 POWERLEVEL9K_SHOW_CHANGESET=true
