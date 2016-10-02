@@ -54,9 +54,9 @@ ZSH_CUSTOM=$ZSH/customizations
 plugins=(git battery brew zsh-syntax-highlighting)
 
 # User configuration
-
+source $HOME/.trello_config
 # export MANPATH="/usr/local/man:$MANPATH"
-
+PATH="$PATH:$HOME/Library/Python/2.7/bin"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
