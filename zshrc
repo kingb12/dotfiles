@@ -55,6 +55,7 @@ plugins=(git battery brew zsh-syntax-highlighting)
 
 # User configuration
 source $HOME/.trello_config
+source $HOME/.rvm/scripts/rvm
 # export MANPATH="/usr/local/man:$MANPATH"
 PATH="$PATH:$HOME/Library/Python/2.7/bin"
 source $ZSH/oh-my-zsh.sh
@@ -129,7 +130,14 @@ alias pips= 'sudo pip'
 
 # aliases for connecting to other hosts
 alias attu='ssh kingb12@attu.cs.washington.edu'
+alias attux='ssh -X kingb12@attu.cs.washington.edu'
+alias kbox='ssh -i ~/.bking-kbase.pem `get_kbox_dns`'
+alias kboxftp='sftp -i ~/.bking-kbase.pem `get_kbox_dns`'
 
+function get_kbox_dns() {
+    echo 'bking@'`aws ec2 describe-instances --instance-ids i-93b23c44 | grep 'PublicDnsName' | grep -o '"ec2.*"'| sed 's/"//g'`
+}
+  
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('dir' 'vcs')
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('time') 
 POWERLEVEL9K_RVM_BACKGROUND="red"

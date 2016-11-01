@@ -1,6 +1,6 @@
 [user]
-	name = Lee Briggs
-	email = lee@leebriggs.co.uk
+	name = Brendan King
+	email = kingb12@cs.washington.edu
 [core]
   excludesfile = ~/.gitignore_global
 	editor = vim
