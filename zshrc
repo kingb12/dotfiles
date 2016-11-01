@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/bking/.oh-my-zsh
+export ZSH=/home/bking/.oh-my-zsh
 
 POWERLEVEL9K_MODE='awesome-patched'
 TERM=xterm-256color
@@ -54,8 +54,8 @@ ZSH_CUSTOM=$ZSH/customizations
 plugins=(git battery brew zsh-syntax-highlighting)
 
 # User configuration
-source $HOME/.trello_config
-source $HOME/.rvm/scripts/rvm
+# source $HOME/.trello_config
+# source $HOME/.rvm/scripts/rvm
 # export MANPATH="/usr/local/man:$MANPATH"
 PATH="$PATH:$HOME/Library/Python/2.7/bin"
 source $ZSH/oh-my-zsh.sh
