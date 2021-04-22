@@ -1,9 +1,10 @@
 [user]
 	name = Brendan King
-	email = kingb12@cs.washington.edu
+	email = bking@apptio.com
 [core]
   excludesfile = ~/.gitignore_global
 	editor = vim
+	autocrlf = false
 [alias]
 	co = checkout
 	s = status
@@ -18,3 +19,5 @@
 	newHighlight = green bold 22
 [push]
 	default = simple
+[http]
+	sslVerify = true
